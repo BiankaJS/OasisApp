@@ -9,9 +9,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var cardLogin: UIView!
+    @IBOutlet weak var btnLogin: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        cardLogin.layer.cornerRadius = 13
+        cardLogin.layer.shadowColor = UIColor.black.cgColor
+        cardLogin.layer.shadowOpacity = 0.5
+        cardLogin.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cardLogin.layer.shadowRadius = 3
+        
+        btnLogin.backgroundColor = UIColor.clear
+            btnLogin.layer.borderColor = UIColor.white.cgColor
+            btnLogin.layer.borderWidth = 2
+            btnLogin.layer.cornerRadius = 2
+        
     }
 
 

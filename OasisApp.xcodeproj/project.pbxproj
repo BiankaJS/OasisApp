@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8AB3B1F92C07F685002036D4 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3B1F82C07F685002036D4 /* CreateAccountVC.swift */; };
+		8AB3B1FB2C07F86A002036D4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3B1FA2C07F86A002036D4 /* HomeVC.swift */; };
 		AB4F12D02C054C2A0090F0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F12CF2C054C2A0090F0FE /* AppDelegate.swift */; };
 		AB4F12D22C054C2A0090F0FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F12D12C054C2A0090F0FE /* SceneDelegate.swift */; };
 		AB4F12D42C054C2A0090F0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F12D32C054C2A0090F0FE /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8AB3B1F82C07F685002036D4 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		8AB3B1FA2C07F86A002036D4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		AB4F12CC2C054C2A0090F0FE /* OasisApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OasisApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4F12CF2C054C2A0090F0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB4F12D12C054C2A0090F0FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				AB4F12D82C054C2B0090F0FE /* Assets.xcassets */,
 				AB4F12DA2C054C2B0090F0FE /* LaunchScreen.storyboard */,
 				AB4F12DD2C054C2B0090F0FE /* Info.plist */,
+				8AB3B1F82C07F685002036D4 /* CreateAccountVC.swift */,
+				8AB3B1FA2C07F86A002036D4 /* HomeVC.swift */,
 			);
 			path = OasisApp;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB4F12D42C054C2A0090F0FE /* ViewController.swift in Sources */,
+				8AB3B1FB2C07F86A002036D4 /* HomeVC.swift in Sources */,
 				AB4F12D02C054C2A0090F0FE /* AppDelegate.swift in Sources */,
+				8AB3B1F92C07F685002036D4 /* CreateAccountVC.swift in Sources */,
 				AB4F12D22C054C2A0090F0FE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
