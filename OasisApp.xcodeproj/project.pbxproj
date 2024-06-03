@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8A03A40F2C0CB33400BE06D8 /* CatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03A40E2C0CB33400BE06D8 /* CatalogVC.swift */; };
 		8A1ED4122C0CC0F600A9C223 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1ED4112C0CC0F600A9C223 /* DetailVC.swift */; };
+		8A1ED4142C0D3D2C00A9C223 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1ED4132C0D3D2C00A9C223 /* ContactVC.swift */; };
+		8A1ED4162C0D4A0600A9C223 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1ED4152C0D4A0600A9C223 /* FavoritesVC.swift */; };
+		8A1ED4182C0D5A5400A9C223 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1ED4172C0D5A5400A9C223 /* ProfileVC.swift */; };
+		8A1ED41A2C0D5A7100A9C223 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1ED4192C0D5A7100A9C223 /* EditProfileVC.swift */; };
 		8AB3B1F92C07F685002036D4 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3B1F82C07F685002036D4 /* CreateAccountVC.swift */; };
 		8AB3B1FB2C07F86A002036D4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3B1FA2C07F86A002036D4 /* HomeVC.swift */; };
 		AB4F12D02C054C2A0090F0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F12CF2C054C2A0090F0FE /* AppDelegate.swift */; };
@@ -22,6 +26,10 @@
 /* Begin PBXFileReference section */
 		8A03A40E2C0CB33400BE06D8 /* CatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogVC.swift; sourceTree = "<group>"; };
 		8A1ED4112C0CC0F600A9C223 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		8A1ED4132C0D3D2C00A9C223 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
+		8A1ED4152C0D4A0600A9C223 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		8A1ED4172C0D5A5400A9C223 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		8A1ED4192C0D5A7100A9C223 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		8AB3B1F82C07F685002036D4 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		8AB3B1FA2C07F86A002036D4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		AB4F12CC2C054C2A0090F0FE /* OasisApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OasisApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +83,10 @@
 				8AB3B1FA2C07F86A002036D4 /* HomeVC.swift */,
 				8A03A40E2C0CB33400BE06D8 /* CatalogVC.swift */,
 				8A1ED4112C0CC0F600A9C223 /* DetailVC.swift */,
+				8A1ED4132C0D3D2C00A9C223 /* ContactVC.swift */,
+				8A1ED4152C0D4A0600A9C223 /* FavoritesVC.swift */,
+				8A1ED4172C0D5A5400A9C223 /* ProfileVC.swift */,
+				8A1ED4192C0D5A7100A9C223 /* EditProfileVC.swift */,
 			);
 			path = OasisApp;
 			sourceTree = "<group>";
@@ -150,13 +162,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A1ED4182C0D5A5400A9C223 /* ProfileVC.swift in Sources */,
 				AB4F12D42C054C2A0090F0FE /* ViewController.swift in Sources */,
 				8AB3B1FB2C07F86A002036D4 /* HomeVC.swift in Sources */,
 				AB4F12D02C054C2A0090F0FE /* AppDelegate.swift in Sources */,
 				8AB3B1F92C07F685002036D4 /* CreateAccountVC.swift in Sources */,
 				8A03A40F2C0CB33400BE06D8 /* CatalogVC.swift in Sources */,
+				8A1ED4162C0D4A0600A9C223 /* FavoritesVC.swift in Sources */,
 				AB4F12D22C054C2A0090F0FE /* SceneDelegate.swift in Sources */,
 				8A1ED4122C0CC0F600A9C223 /* DetailVC.swift in Sources */,
+				8A1ED4142C0D3D2C00A9C223 /* ContactVC.swift in Sources */,
+				8A1ED41A2C0D5A7100A9C223 /* EditProfileVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
