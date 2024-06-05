@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import org.team.restoasis.model.DetailProperty;
 import org.team.restoasis.model.Property;
 
 /**
@@ -17,7 +18,7 @@ import org.team.restoasis.model.Property;
  * @author aj898
  */
 public class ControllerProperty {
-     public List<Property> getAll() {
+    public List<Property> getProperties() {
         List<Property> listProperties = null;
         String query = "SELECT * FROM Properties";
         try {
@@ -46,5 +47,41 @@ public class ControllerProperty {
         property.setLocation(rs.getString("Location"));
         property.setPrice(rs.getFloat("Price"));
         return property;
+    }
+    
+    public List<DetailProperty> getDetailProperty() {
+        List<DetailProperty> listDetailProperties = null;
+        String query = "SELECT * FROM Details";
+        try {
+            ConnectionMysql connMysql = new ConnectionMysql();
+            Connection conn = connMysql.open();
+            PreparedStatement pstm = conn.prepareStatement(query);
+            ResultSet rs = pstm.executeQuery();
+            listDetailProperties = new ArrayList<>();
+            while (rs.next()) {
+                listDetailProperties.add(fillDetailProperty(rs));
+            }
+            rs.close();
+            pstm.close();
+            connMysql.close();
+            return listDetailProperties;
+        } catch (Exception e) {
+            listDetailProperties = new ArrayList<>();
+            e.printStackTrace();
+            return listDetailProperties;
+        }
+    }
+
+    private DetailProperty fillDetailProperty(ResultSet rs) throws SQLException {
+        DetailProperty dp = new DetailProperty();
+        dp.setDetail_Id(rs.getInt("Detail_id"));
+        dp.setDescription(rs.getString("Description")); 
+        dp.setSize(rs.getString("Size")); 
+        dp.setBedrooms(rs.getInt("Bedrooms"));
+        dp.setBathrooms(rs.getInt("Bathrooms"));
+        dp.setStyle(rs.getString("Style")); 
+        dp.setSpecial_Features(rs.getString("Special_Features"));
+
+        return dp;
     }
 }
