@@ -5,20 +5,21 @@
 package org.team.restoasis.controller;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
-import java.util.ArrayList;
-import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import org.team.restoasis.model.Property;
+
 /**
  *
  * @author aj898
  */
-public class ControllerProperties {
-     public List<Propertie> getAll() {
-        List<Propertie> listProperties = null;
-        String query = "SELECT * FROM PROPERTIES";
+public class ControllerProperty {
+     public List<Property> getAll() {
+        List<Property> listProperties = null;
+        String query = "SELECT * FROM Properties";
         try {
             ConnectionMysql connMysql = new ConnectionMysql();
             Connection conn = connMysql.open();
@@ -26,7 +27,7 @@ public class ControllerProperties {
             ResultSet rs = pstm.executeQuery();
             listProperties = new ArrayList<>();
             while (rs.next()) {
-                listProperties.add(fillProperties(rs));
+                listProperties.add(fillProperty(rs));
             }
             rs.close();
             pstm.close();
@@ -38,14 +39,12 @@ public class ControllerProperties {
             return listProperties;
         }
     }
-     
-    private Propertie fillPropertie(ResultSet rs) throws SQLException {
-        Usuario u = new Usuario();
-        u.setIdUsuario(rs.getInt("idUsuario"));
-        u.setUsername(rs.getString("username"));
-        u.setPassword(rs.getString("password"));
-        u.setToken(rs.getString("token"));
-        u.setLastConnection(rs.getString("lastConnection"));
-        return u;
+
+    private Property fillProperty(ResultSet rs) throws SQLException {
+        Property property = new Property();
+        property.setProperty_id(rs.getInt("Property_id")); 
+        property.setLocation(rs.getString("Location"));
+        property.setPrice(rs.getFloat("Price"));
+        return property;
     }
 }

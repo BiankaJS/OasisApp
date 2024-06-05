@@ -8,16 +8,16 @@ package org.team.restoasis.model;
  *
  * @author aj898
  */
-public class Propertie {
-     private int property_id;
+public class Property {
+    private int property_id;
     private String location;
     private float price;
     
-    public Properties (){
+    public Property (){
         
     }
 
-    public Properties(int property_id, String location, float price) {
+    public Property(int property_id, String location, float price) {
         this.property_id = property_id;
         this.location = location;
         this.price = price;
@@ -46,5 +46,7 @@ public class Propertie {
     public void setPrice(float price) {
         this.price = price;
     }
+    
+    
     
 }
