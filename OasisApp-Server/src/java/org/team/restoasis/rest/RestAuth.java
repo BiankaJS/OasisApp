@@ -19,35 +19,59 @@ import org.team.restoasis.model.User;
  */
 @Path("user")
 public class RestAuth {
-    
+
     @POST
-@Produces(MediaType.APPLICATION_JSON)
-@Path("login")
-public Response login(@FormParam("username") String username,
-                      @FormParam("password") String password) {
-    String out = "";
-    try {
-        ControllerAuth cu = new ControllerAuth();
-        User user = cu.getByUsernameAndPassword(username, password);
-        if (user != null) {
-            System.out.println(username);
-            out = """
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("login")
+    public Response login(@FormParam("username") String username,
+            @FormParam("password") String password) {
+        String out = "";
+        try {
+            ControllerAuth cu = new ControllerAuth();
+            User user = cu.getByUsernameAndPassword(username, password);
+            if (user != null) {
+                System.out.println(username);
+                out = """
                  {"user_id": "%d"}
                  """.formatted(user.getUser_id());
-        } else {
-            out = """
+            } else {
+                out = """
                  {"user_id":"0"}
                  """;
-        }
-    } catch (Exception e) {
-        out = """
+            }
+        } catch (Exception e) {
+            out = """
              {"error":"%s"}
              """;
-        out = String.format(out, e.getMessage());
+            out = String.format(out, e.getMessage());
+        }
+        return Response.ok(out).build();
     }
-    return Response.ok(out).build();
-}
-    
-    
-    
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("Save")
+    public Response Save(@FormParam("name") String name,
+            @FormParam("username") String username,
+            @FormParam("email") String email,
+            @FormParam("password") String password,
+            @FormParam("addres") String addres,
+            @FormParam("phone") String phone) {
+        String out = "";
+        try {
+            //System.out.println(use);
+            User user = new User(0, name, username, email, password, addres, phone);
+            ControllerAuth us = new ControllerAuth();
+            us.save(user);
+            out = """
+                     {"Response":"Insert correct"}
+                     """;
+        } catch (Exception e) {
+            out = """
+                 {"Response":"Error to insert"}
+                 """;
+        }
+        return Response.ok(out).build();
+
+    }
 }

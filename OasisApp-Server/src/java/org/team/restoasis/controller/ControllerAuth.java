@@ -15,7 +15,7 @@ import org.team.restoasis.model.User;
  * @author aj898
  */
 public class ControllerAuth {
-    
+
     private User fillUsuario(ResultSet rs) throws SQLException {
         User u = new User();
         u.setUser_id(rs.getInt("user_id"));
@@ -27,28 +27,51 @@ public class ControllerAuth {
         u.setPhone(rs.getString("phone"));
         return u;
     }
-    
-     public User getByUsernameAndPassword(String username, String password) {
-    User user = null;
-    String query = "SELECT * FROM Users WHERE username = ? AND password = ?";
-    try {
-        ConnectionMysql connMysql = new ConnectionMysql();
-        Connection conn = connMysql.open();
-        //Prepara la query para recibir los parametros necesarios
-        PreparedStatement pstm = conn.prepareStatement(query);
-        pstm.setString(1, username);
-        pstm.setString(2, password);
-        ResultSet rs = pstm.executeQuery();
-        if (rs.next()) {
-            user = fillUsuario(rs);
+
+    public User getByUsernameAndPassword(String username, String password) {
+        User user = null;
+        String query = "SELECT * FROM Users WHERE username = ? AND password = ?";
+        try {
+            ConnectionMysql connMysql = new ConnectionMysql();
+            Connection conn = connMysql.open();
+            //Prepara la query para recibir los parametros necesarios
+            PreparedStatement pstm = conn.prepareStatement(query);
+            pstm.setString(1, username);
+            pstm.setString(2, password);
+            ResultSet rs = pstm.executeQuery();
+            if (rs.next()) {
+                user = fillUsuario(rs);
+            }
+            rs.close();
+            pstm.close();
+            connMysql.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        rs.close();
-        pstm.close();
-        connMysql.close();
-    } catch (Exception e) {
-        e.printStackTrace();
+        return user;
     }
-    return user;
-}
-    
+
+    public User save(User user) {
+        String query = "INSERT INTO Users VALUES (0,?,?,?,?,?,?)";
+        try {
+            ConnectionMysql connMysql = new ConnectionMysql();
+            Connection conn = connMysql.open();
+            PreparedStatement pstm = conn.prepareStatement(query);
+            pstm.setString(1, user.getName());
+            pstm.setString(2, user.getUsername());
+            pstm.setString(3, user.getEmail());
+            pstm.setString(4, user.getPassword());
+            pstm.setString(5, user.getAddres());
+            pstm.setString(6, user.getPhone());
+            pstm.execute();
+            System.out.println(pstm.getGeneratedKeys());
+            pstm.close();
+            connMysql.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("Error " + e.getMessage());
+        }
+        return user;
+    }
+
 }
