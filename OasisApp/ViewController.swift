@@ -13,8 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     
     override func viewDidLoad() {
+        loadCard()
         super.viewDidLoad()
-        
+    }
+
+    func loadCard()
+    {
         cardLogin.layer.cornerRadius = 13
         cardLogin.layer.shadowColor = UIColor.black.cgColor
         cardLogin.layer.shadowOpacity = 0.5
@@ -25,9 +29,6 @@ class ViewController: UIViewController {
             btnLogin.layer.borderColor = UIColor.white.cgColor
             btnLogin.layer.borderWidth = 2
             btnLogin.layer.cornerRadius = 2
-        
     }
-
-
 }
 
