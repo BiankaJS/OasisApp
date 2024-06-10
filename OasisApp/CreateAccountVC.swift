@@ -11,12 +11,20 @@ class CreateAccountVC: UIViewController {
     
     @IBOutlet weak var cardCreateAccount: UIView!
     @IBOutlet weak var btnCreatAccount: UIButton!
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPass: UITextField!
     
     
 
     override func viewDidLoad() {
+        loadCard()
         super.viewDidLoad()
-        
+    }
+    
+    func loadCard()
+    {
         cardCreateAccount.layer.cornerRadius = 13
         cardCreateAccount.layer.shadowColor = UIColor.black.cgColor
         cardCreateAccount.layer.shadowOpacity = 0.5
@@ -27,9 +35,6 @@ class CreateAccountVC: UIViewController {
         btnCreatAccount.layer.borderColor = UIColor.white.cgColor
         btnCreatAccount.layer.borderWidth = 2
         btnCreatAccount.layer.cornerRadius = 2
-        
     }
-    
-
 
 }

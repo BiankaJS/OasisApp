@@ -21,6 +21,8 @@
 		AB4F12D72C054C2A0090F0FE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AB4F12D62C054C2A0090F0FE /* Base */; };
 		AB4F12D92C054C2B0090F0FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4F12D82C054C2B0090F0FE /* Assets.xcassets */; };
 		AB4F12DC2C054C2B0090F0FE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AB4F12DB2C054C2B0090F0FE /* Base */; };
+		ABA510232C0FF7BF0077697F /* ConfigApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA510222C0FF7BF0077697F /* ConfigApi.swift */; };
+		ABA510252C0FF9B10077697F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA510242C0FF9B10077697F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		AB4F12D82C054C2B0090F0FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB4F12DB2C054C2B0090F0FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB4F12DD2C054C2B0090F0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA510222C0FF7BF0077697F /* ConfigApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigApi.swift; sourceTree = "<group>"; };
+		ABA510242C0FF9B10077697F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 		AB4F12CE2C054C2A0090F0FE /* OasisApp */ = {
 			isa = PBXGroup;
 			children = (
+				ABA510212C0FF7940077697F /* Models */,
+				ABA510202C0FF7850077697F /* Controller */,
 				AB4F12CF2C054C2A0090F0FE /* AppDelegate.swift */,
 				AB4F12D12C054C2A0090F0FE /* SceneDelegate.swift */,
 				AB4F12D32C054C2A0090F0FE /* ViewController.swift */,
@@ -89,6 +95,22 @@
 				8A1ED4192C0D5A7100A9C223 /* EditProfileVC.swift */,
 			);
 			path = OasisApp;
+			sourceTree = "<group>";
+		};
+		ABA510202C0FF7850077697F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABA510222C0FF7BF0077697F /* ConfigApi.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ABA510212C0FF7940077697F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABA510242C0FF9B10077697F /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,8 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA510252C0FF9B10077697F /* User.swift in Sources */,
 				8A1ED4182C0D5A5400A9C223 /* ProfileVC.swift in Sources */,
 				AB4F12D42C054C2A0090F0FE /* ViewController.swift in Sources */,
+				ABA510232C0FF7BF0077697F /* ConfigApi.swift in Sources */,
 				8AB3B1FB2C07F86A002036D4 /* HomeVC.swift in Sources */,
 				AB4F12D02C054C2A0090F0FE /* AppDelegate.swift in Sources */,
 				8AB3B1F92C07F685002036D4 /* CreateAccountVC.swift in Sources */,
