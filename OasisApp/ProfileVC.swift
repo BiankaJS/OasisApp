@@ -9,7 +9,6 @@ import UIKit
 
 class ProfileVC: UIViewController {
     
-    
     @IBOutlet weak var btnEditProfile: UIButton!
     
     override func viewDidLoad() {

@@ -84,4 +84,16 @@ public class ControllerProperty {
 
         return dp;
     }
+     private DetailProperty filltailProperty(ResultSet rs) throws SQLException {
+        DetailProperty dp = new DetailProperty();
+        dp.setDetail_Id(rs.getInt("Detail_id"));
+        dp.setDescription(rs.getString("Description")); 
+        dp.setSize(rs.getString("Size")); 
+        dp.setBedrooms(rs.getInt("Bedrooms"));
+        dp.setBathrooms(rs.getInt("Bathrooms"));
+        dp.setStyle(rs.getString("Style")); 
+        dp.setSpecial_Features(rs.getString("Special_Features"));
+
+        return dp;
+    }
 }
