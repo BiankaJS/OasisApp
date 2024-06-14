@@ -7,10 +7,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
-    var user: String = ""
-    var pass: String = ""
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCard()
@@ -19,17 +15,14 @@ class ViewController: UIViewController {
     
     @IBAction func btnLogin(_ sender: UIButton) {
         guard let username = txtUsername.text,!username.isEmpty else {
-            return GlobalFunctions.showAlert("Se debe de ingresar el usuario")
+            return showAlert("Warning", "User input required")
         }
         
         guard let password = txtPassword.text,!password.isEmpty else {
-            return GlobalFunctions.showAlert("Se debe de ingresar la contraseña")
+            return showAlert("Warning", "Password required")
         }
-        print(username, password)
         
-        user = username
-        pass = password
-        validateLogin(user, pass) { success in
+        validateLogin(username, password) { success in
             DispatchQueue.main.asyncAndWait {
                 if success {
                     print("Validacion: ", success)
@@ -37,14 +30,13 @@ class ViewController: UIViewController {
                     let tabBar = self.storyboard?.instantiateViewController(identifier: "TabBarApp") as? UITabBarController
                     self.present(tabBar!, animated: true, completion: nil)
                 } else {
-                    GlobalFunctions.showAlert("No se encontró el usuario")
+                    self.showAlert("Warning", "User not found")
                 }
             }
         }
     }
     
     private func validateLogin(_ user: String, _ password: String, completion: @escaping (Bool) -> Void) {
-        //var empleadoId = 0
         let loginEndpoint = "/auth/login?username=\(user)&password=\(password)"
         let urlString = ApiConfig.baseURL + loginEndpoint
         

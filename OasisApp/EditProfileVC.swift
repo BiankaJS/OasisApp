@@ -13,11 +13,15 @@ class EditProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        hideKeyboardWhenTappedAround()
+        loadCard()
+    }
+    
+    func loadCard()
+    {
         btnSaveData.backgroundColor = UIColor.clear
         btnSaveData.layer.borderColor = UIColor.white.cgColor
         btnSaveData.layer.borderWidth = 2
         btnSaveData.layer.cornerRadius = 2
     }
-    
 }
