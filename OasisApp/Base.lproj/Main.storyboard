@@ -542,7 +542,7 @@ and buyers.</string>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nxp-0z-ECu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.32156863810000003" green="0.25490197539999998" blue="0.19215688110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <tabBarAppearance key="standardAppearance">
                             <color key="backgroundColor" red="0.32156863810000003" green="0.25490197539999998" blue="0.19215688110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -551,7 +551,7 @@ and buyers.</string>
                     </tabBar>
                     <connections>
                         <segue destination="HSt-O0-0W6" kind="relationship" relationship="viewControllers" id="uSk-bW-ZoJ"/>
-                        <segue destination="bmW-u2-8ok" kind="relationship" relationship="viewControllers" id="fQz-4r-Lgb"/>
+                        <segue destination="OhQ-6x-40U" kind="relationship" relationship="viewControllers" id="98L-4x-jVi"/>
                         <segue destination="Ohh-N6-Xnr" kind="relationship" relationship="viewControllers" id="p2s-8B-aFI"/>
                         <segue destination="fzD-dc-dJb" kind="relationship" relationship="viewControllers" id="Yix-xX-ufe"/>
                         <segue destination="PqC-zb-gG7" kind="relationship" relationship="viewControllers" id="Fy2-tS-3HG"/>
@@ -561,7 +561,7 @@ and buyers.</string>
             </objects>
             <point key="canvasLocation" x="1767" y="-9"/>
         </scene>
-        <!--Catalog-->
+        <!--CatalogVC-->
         <scene sceneID="tvA-IH-6o9">
             <objects>
                 <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="bmW-u2-8ok" customClass="CatalogVC" customModule="OasisApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -569,7 +569,7 @@ and buyers.</string>
                         <rect key="frame" x="0.0" y="0.0" width="393" height="1400"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU7-Bu-GVv">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="1400"/>
+                                <rect key="frame" x="0.0" y="44" width="393" height="1312"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMm-6b-0vz">
                                         <rect key="frame" x="-10" y="-4" width="403" height="1404"/>
@@ -628,6 +628,9 @@ and buyers.</string>
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="View"/>
+                                                <connections>
+                                                    <segue destination="7EK-oX-Cb7" kind="show" id="lKS-tg-sBW"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Line 14" translatesAutoresizingMaskIntoConstraints="NO" id="S3v-SY-PiG">
                                                 <rect key="frame" x="20" y="528" width="374" height="30"/>
@@ -635,6 +638,7 @@ and buyers.</string>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.32156862745098036" green="0.25490196078431371" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="403" id="6dV-Oa-fAh"/>
                                             <constraint firstAttribute="height" constant="1404" id="WgL-ck-a7z"/>
@@ -658,16 +662,30 @@ and buyers.</string>
                             <constraint firstItem="fU7-Bu-GVv" firstAttribute="centerX" secondItem="wAo-2d-iFR" secondAttribute="centerX" id="w9K-tI-XmG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Catalog" id="Pif-m0-gFL">
-                        <imageReference key="image" image="book" catalog="system" symbolScale="large"/>
-                        <imageReference key="selectedImage" image="book" catalog="system" symbolScale="large"/>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" id="KIo-bD-Rl9"/>
+                    <navigationItem key="navigationItem" id="KIo-bD-Rl9">
+                        <barButtonItem key="backBarButtonItem" title="Catalog" id="Zjj-u4-rM2"/>
+                    </navigationItem>
                     <size key="freeformSize" width="393" height="1400"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGF-ac-xUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="1223"/>
+            <point key="canvasLocation" x="305" y="1134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cfj-NJ-613">
+            <objects>
+                <viewController id="F7x-N0-UQM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JZ6-an-jiT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NDk-7q-r5W"/>
+                        <color key="backgroundColor" red="0.38431376220000002" green="0.32549020649999999" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gcj-eA-ABG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6c-fI-7lf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1110" y="966"/>
         </scene>
         <!--DetailVC-->
         <scene sceneID="PLh-mu-AHL">
@@ -678,7 +696,7 @@ and buyers.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlX-ul-YPm">
-                                <rect key="frame" x="0.0" y="-11" width="393" height="1161"/>
+                                <rect key="frame" x="0.0" y="33" width="393" height="1068"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundDetail" translatesAutoresizingMaskIntoConstraints="NO" id="iqK-2S-kDz">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="496"/>
@@ -746,6 +764,9 @@ Special Features:
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Appointment Scheduler"/>
+                                                <connections>
+                                                    <segue destination="F7x-N0-UQM" kind="show" id="Qsm-xL-Bqg"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kitchen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9L-TT-5Bz">
                                                 <rect key="frame" x="21" y="243" width="149" height="20"/>
@@ -840,7 +861,6 @@ Special Features:
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J38-UQ-pH9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="J38-UQ-pH9" firstAttribute="trailing" secondItem="QlX-ul-YPm" secondAttribute="trailing" id="C1G-6q-tZj"/>
                             <constraint firstItem="QlX-ul-YPm" firstAttribute="leading" secondItem="J38-UQ-pH9" secondAttribute="leading" id="CCZ-6s-vIh"/>
@@ -848,11 +868,12 @@ Special Features:
                             <constraint firstItem="J38-UQ-pH9" firstAttribute="bottom" secondItem="QlX-ul-YPm" secondAttribute="bottom" constant="-34" id="QWB-O3-cm8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mLc-L1-46V"/>
                     <size key="freeformSize" width="393" height="1150"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYT-qw-7Hv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4018" y="-113"/>
+            <point key="canvasLocation" x="-378" y="1050"/>
         </scene>
         <!--Contac-->
         <scene sceneID="lUo-ms-cBy">
@@ -1311,12 +1332,12 @@ Contact: For inquiries, partnerships, or support, please contact us via email at
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNY-ve-o7H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="1000"/>
+            <point key="canvasLocation" x="1809.4202898550725" y="999.77678571428567"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="0N5-eg-0RF">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="jtn-hP-DZL" customClass="ProfileVC" customModule="OasisApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jtn-hP-DZL" customClass="ProfileVC" customModule="OasisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z94-zH-ajc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1455,7 +1476,7 @@ Contact: For inquiries, partnerships, or support, please contact us via email at
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fkv-4n-Sf3">
-                                <rect key="frame" x="198" y="425" width="154" height="34"/>
+                                <rect key="frame" x="198" y="427" width="157" height="34"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1497,6 +1518,7 @@ Contact: For inquiries, partnerships, or support, please contact us via email at
                             <constraint firstItem="FqL-M7-gX8" firstAttribute="centerY" secondItem="eMP-Fs-FrX" secondAttribute="centerY" id="EFv-6u-vdA"/>
                             <constraint firstItem="KqF-xE-MFb" firstAttribute="leading" secondItem="yUZ-YH-Hbe" secondAttribute="trailing" constant="69" id="FJH-G6-1lp"/>
                             <constraint firstItem="eMP-Fs-FrX" firstAttribute="top" secondItem="KKR-Ru-hCz" secondAttribute="bottom" constant="12" id="Je8-dK-9Eh"/>
+                            <constraint firstItem="lE6-Gr-Zvu" firstAttribute="leading" secondItem="Fkv-4n-Sf3" secondAttribute="trailing" constant="-1" id="L5D-Uh-l7C"/>
                             <constraint firstItem="bcm-gQ-PjM" firstAttribute="centerY" secondItem="yUZ-YH-Hbe" secondAttribute="centerY" id="Lep-cP-3Qp"/>
                             <constraint firstItem="MxL-x6-0uV" firstAttribute="trailing" secondItem="IZd-ZT-56a" secondAttribute="trailing" constant="11" id="MFL-WZ-Xgf"/>
                             <constraint firstItem="Fkm-TY-2zh" firstAttribute="leading" secondItem="FqL-M7-gX8" secondAttribute="leading" id="MyE-VB-ftb"/>
@@ -1555,12 +1577,12 @@ Contact: For inquiries, partnerships, or support, please contact us via email at
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMw-eY-Rwd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2469.5652173913045" y="947.54464285714278"/>
+            <point key="canvasLocation" x="3379.7101449275365" y="947.54464285714278"/>
         </scene>
         <!--Edit ProfileVC-->
         <scene sceneID="tCA-ML-8Li">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="xpL-mU-1Qn" customClass="EditProfileVC" customModule="OasisApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editP" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xpL-mU-1Qn" customClass="EditProfileVC" customModule="OasisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uhu-a5-BUI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1734,12 +1756,12 @@ Contact: For inquiries, partnerships, or support, please contact us via email at
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lue-pu-oLg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3276.811594202899" y="947.54464285714278"/>
+            <point key="canvasLocation" x="4186.9565217391309" y="947.54464285714278"/>
         </scene>
         <!--Profile-->
         <scene sceneID="tLE-xm-6c3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PqC-zb-gG7" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Profile" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PqC-zb-gG7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="wCn-gU-wQD">
                         <imageReference key="image" image="person.crop.circle" catalog="system" symbolScale="large"/>
                         <imageReference key="selectedImage" image="person.crop.circle" catalog="system" symbolScale="large"/>
@@ -1757,7 +1779,33 @@ Contact: For inquiries, partnerships, or support, please contact us via email at
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Uq-6K-vNn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672.4637681159422" y="948.21428571428567"/>
+            <point key="canvasLocation" x="2582.608695652174" y="948.21428571428567"/>
+        </scene>
+        <!--Catalog-->
+        <scene sceneID="Bx7-0r-tUT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OhQ-6x-40U" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Catalog" id="Pif-m0-gFL">
+                        <imageReference key="image" image="book" catalog="system" symbolScale="large"/>
+                        <imageReference key="selectedImage" image="book" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H0a-Pf-6CB">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.32156863810000003" green="0.25490197539999998" blue="0.19215688110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <navigationBarAppearance key="compactAppearance"/>
+                        <navigationBarAppearance key="compactScrollEdgeAppearance"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bmW-u2-8ok" kind="relationship" relationship="rootViewController" id="Prv-om-zmp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FuY-0s-dTv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="966"/>
         </scene>
     </scenes>
     <resources>

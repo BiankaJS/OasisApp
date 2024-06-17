@@ -66,6 +66,80 @@ class EditProfileVC: UIViewController {
             return
         }
         
+        let params: [String: String] = [
+            "userId": String(user!.userId),
+            "name" : name,
+            "username": username,
+            "email": email,
+            "password": password,
+            "address": address,
+            "phone": phone
+        ]
+        
+        validateUpdate(params) { success in
+            DispatchQueue.main.asyncAndWait {
+                if success {
+                    print("Update: ", success)
+                    self.navigationController?.popToRootViewController(animated: true)
+                } else {
+                    self.showAlert("Warning", "Try again later")
+                }
+            }
+        }
+    }
+    
+    private func validateUpdate(_ params: [String: String], completion: @escaping (Bool) -> Void) {
+        let parameterArray = params.map { key, value in
+            return "\(key)=\(value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
+        }
+        let body = parameterArray.joined(separator: "&")
+        print(body)
+        
+        let endpoint = "/profile/updateUser"
+        let urlString = ApiConfig.baseURL + endpoint
+        guard let url = URL(string: urlString) else {
+            print("Algo salió mal")
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpBody = body.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error en la operación: \(error)")
+                completion(false)
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                if !(200...299).contains(httpResponse.statusCode)
+                {
+                    print("Servidor responde:", httpResponse.statusCode)
+                }
+                if let data = data {
+                    do {
+                        if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                            print("Todo salio excelente: ",jsonResponse)
+                            completion(true)
+                            return
+                        }
+                    } catch let parsingError {
+                        print("Aquí ya no funcionó: \(parsingError)")
+                        completion(false)
+                        return
+                    }
+                }
+            } else {
+                print("Respuesta fallida o no HTTPURLResponse: \(response)")
+                completion(false)
+                return
+            }
+        }
+        task.resume()
     }
     
     func loadCard()

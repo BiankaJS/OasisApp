@@ -105,4 +105,8 @@ class ProfileVC: UIViewController {
             (segue.destination as! EditProfileVC).user = modelProfile
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
 }

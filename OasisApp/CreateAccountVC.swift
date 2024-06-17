@@ -47,7 +47,6 @@ class CreateAccountVC: UIViewController {
             "username": username,
             "email": email,
             "password": password,
-            "address": "N/A",
             "phone": phone
         ]
         
