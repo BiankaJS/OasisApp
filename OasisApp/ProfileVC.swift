@@ -38,7 +38,7 @@ class ProfileVC: UIViewController {
     }
     
     private func loadData() {
-    let endpoint = "/profile/getUserDetails?userId=\(8)"
+        let endpoint = "/profile/getUserDetails?userId=\(GlobalVariable.userId)"
     let urlString = ApiConfig.baseURL + endpoint
     guard let url = URL(string: urlString) else {
         print("Algo salió mal")

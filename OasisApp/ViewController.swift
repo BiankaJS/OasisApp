@@ -58,6 +58,9 @@ class ViewController: UIViewController {
                 if let data = data {
                     do {
                         if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                            
+                            GlobalVariable.userId = Int(jsonResponse["userId"] as! String)!
+                            print("User: ",GlobalVariable.userId)
                             print(jsonResponse)
                             completion(true)
                             return

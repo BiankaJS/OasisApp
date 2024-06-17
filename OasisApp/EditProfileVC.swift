@@ -67,7 +67,7 @@ class EditProfileVC: UIViewController {
         }
         
         let params: [String: String] = [
-            "userId": String(user!.userId),
+            "userId": String(GlobalVariable.userId),
             "name" : name,
             "username": username,
             "email": email,
