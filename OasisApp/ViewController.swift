@@ -25,8 +25,6 @@ class ViewController: UIViewController {
         validateLogin(username, password) { success in
             DispatchQueue.main.asyncAndWait {
                 if success {
-                    print("Validacion: ", success)
-                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                     let tabBar = self.storyboard?.instantiateViewController(identifier: "TabBarApp") as? UITabBarController
                     self.present(tabBar!, animated: true, completion: nil)
                 } else {
