@@ -49,13 +49,14 @@ public class ControllerProperty {
         return property;
     }
     
-    public List<DetailProperty> getDetailProperty() {
+    public List<DetailProperty> getDetailProperty(int propertyId) {
         List<DetailProperty> listDetailProperties = null;
-        String query = "SELECT * FROM Details";
+        String query = "SELECT * FROM Details WHERE property_id = ?";
         try {
             ConnectionMysql connMysql = new ConnectionMysql();
             Connection conn = connMysql.open();
             PreparedStatement pstm = conn.prepareStatement(query);
+            pstm.setInt(1, propertyId);
             ResultSet rs = pstm.executeQuery();
             listDetailProperties = new ArrayList<>();
             while (rs.next()) {
@@ -74,6 +75,7 @@ public class ControllerProperty {
 
     private DetailProperty fillDetailProperty(ResultSet rs) throws SQLException {
         DetailProperty dp = new DetailProperty();
+        dp.setProperty_id(rs.getInt("Property_id"));
         dp.setDetail_Id(rs.getInt("Detail_id"));
         dp.setDescription(rs.getString("Description")); 
         dp.setSize(rs.getString("Size")); 

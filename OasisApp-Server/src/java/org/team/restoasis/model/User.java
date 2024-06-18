@@ -10,35 +10,35 @@ package org.team.restoasis.model;
  */
 public class User {
     
-    private int user_id;
+    private int userId;
     private String name;
     private String username;
     private String email;
     private String password;
-    private String addres;
+    private String address;
     private String phone;
     
     public User(){
     }
 
-    public User(int user_id, String name, String username, String email, String password, String addres, String phone) {
-        this.user_id = user_id;
+    public User(int user_id, String name, String username, String email, String password, String address, String phone) {
+        this.userId = user_id;
         this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
-        this.addres = addres;
+        this.address = address;
         this.phone = phone;
     }
     
     
 
     public int getUser_id() {
-        return user_id;
+        return userId;
     }
 
     public void setUser_id(int user_id) {
-        this.user_id = user_id;
+        this.userId = user_id;
     }
 
     public String getName() {
@@ -74,11 +74,11 @@ public class User {
     }
 
     public String getAddres() {
-        return addres;
+        return address;
     }
 
-    public void setAddres(String addres) {
-        this.addres = addres;
+    public void setAddres(String address) {
+        this.address = address;
     }
 
     public String getPhone() {

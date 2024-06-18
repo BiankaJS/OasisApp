@@ -21,26 +21,26 @@ import org.team.restoasis.model.User;
  */
 @Path("auth")
 public class RestAuth {
-    
-@POST
-@Produces(MediaType.APPLICATION_JSON)
-@Path("login")
-public Response login(@QueryParam("username") String username,
-                      @QueryParam("password") String password) {
-    String out = "";
-    try {
-        ControllerAuth cu = new ControllerAuth();
-        User user = cu.getByUsernameAndPassword(username, password);
-        if (user != null) {
-            System.out.println(username);
-            out = """
-                 {"user_id": "%d"}
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("login")
+    public Response login(@QueryParam("username") String username,
+            @QueryParam("password") String password) {
+        String out = "";
+        try {
+            ControllerAuth cu = new ControllerAuth();
+            User user = cu.getByUsernameAndPassword(username, password);
+            if (user != null) {
+                System.out.println(username);
+                out = """
+                 {"userId": "%d"}
                  """.formatted(user.getUser_id());
-        } else {
-            return Response.status(401).build();
-        }
-    } catch (Exception e) {
-        out = """
+            } else {
+                return Response.status(401).build();
+            }
+        } catch (Exception e) {
+            out = """
              {"error":"%s"}
              """;
             out = String.format(out, e.getMessage());
@@ -50,17 +50,17 @@ public Response login(@QueryParam("username") String username,
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("Save")
+    @Path("save")
     public Response Save(@FormParam("name") String name,
             @FormParam("username") String username,
             @FormParam("email") String email,
             @FormParam("password") String password,
-            @FormParam("addres") String addres,
+            @FormParam("address") String address,
             @FormParam("phone") String phone) {
         String out = "";
         try {
             //System.out.println(use);
-            User user = new User(0, name, username, email, password, addres, phone);
+            User user = new User(0, name, username, email, password, address, phone);
             ControllerAuth us = new ControllerAuth();
             us.save(user);
             out = """

@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.util.List;
@@ -19,7 +20,7 @@ import org.team.restoasis.model.Property;
  *
  * @author aj898
  */
-@Path("Property")
+@Path("property")
 public class RestProperty {
     
     @Path("getProperties")
@@ -40,15 +41,15 @@ public class RestProperty {
         return Response.ok(out).build();
     }
     
-    @Path("getDetailProperties")
+    @Path("getDetailPropertie")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getDetailProperties() {
+    public Response getDetailPropertie(@QueryParam("propertyId") int propertyId) {
         String out = "";
         Gson gson = new Gson();
         try {
             ControllerProperty dp = new ControllerProperty();
-            List<DetailProperty> list = dp.getDetailProperty();
+            List<DetailProperty> list = dp.getDetailProperty(propertyId);
             out = gson.toJson(list);
         } catch (Exception e) {
             out = """

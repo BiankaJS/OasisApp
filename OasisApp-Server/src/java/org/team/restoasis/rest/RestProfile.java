@@ -6,10 +6,12 @@ package org.team.restoasis.rest;
 
 import com.google.gson.Gson;
 import jakarta.ws.rs.FormParam;
+import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.team.restoasis.controller.ControllerProfile;
@@ -23,10 +25,10 @@ import org.team.restoasis.model.User;
 @Path("profile")
 public class RestProfile {
     
-    @POST
+    @GET
     @Path("getUserDetails")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUserDetails(@FormParam("user_id") int userId) {
+    public Response getUserDetails(@QueryParam("userId") int userId) {
         System.out.println("Entramos al metodo");
         System.out.println(userId);
         
@@ -47,21 +49,21 @@ public class RestProfile {
     @Path("updateUser")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateUser(
-            @FormParam("user_id") int userId,
+            @FormParam("userId") String userId,
             @FormParam("name") String name,
             @FormParam("username") String username,
             @FormParam("email") String email,
             @FormParam("password") String password,
-            @FormParam("addres") String addres,
+            @FormParam("address") String address,
             @FormParam("phone") String phone) {
         
         User user = new User();
-        user.setUser_id(userId);
+        user.setUser_id(Integer.parseInt(userId));
         user.setName(name);
         user.setUsername(username);
         user.setEmail(email);
         user.setPassword(password);
-        user.setAddres(addres);
+        user.setAddres(address);
         user.setPhone(phone);
         
         System.out.println("Entramos al metodo");
