@@ -26,6 +26,7 @@
 		AB950F152C1353E200C3DD3D /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB950F142C1353E200C3DD3D /* GlobalFunctions.swift */; };
 		ABA510232C0FF7BF0077697F /* ConfigApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA510222C0FF7BF0077697F /* ConfigApi.swift */; };
 		ABA510252C0FF9B10077697F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA510242C0FF9B10077697F /* User.swift */; };
+		ABC78FFA2C21E13B005A8433 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC78FF92C21E13B005A8433 /* CustomTableViewCell.swift */; };
 		ABD6C5A42C212126001FC83C /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD6C5A32C212126001FC83C /* Property.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		AB950F142C1353E200C3DD3D /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		ABA510222C0FF7BF0077697F /* ConfigApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigApi.swift; sourceTree = "<group>"; };
 		ABA510242C0FF9B10077697F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ABC78FF92C21E13B005A8433 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		ABD6C5A32C212126001FC83C /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				AB950F142C1353E200C3DD3D /* GlobalFunctions.swift */,
 				AB57D9382C209E30001C0CAA /* VisitVC.swift */,
 				AB57D93A2C20B2D3001C0CAA /* GlobalVariable.swift */,
+				ABC78FF92C21E13B005A8433 /* CustomTableViewCell.swift */,
 			);
 			path = OasisApp;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC78FFA2C21E13B005A8433 /* CustomTableViewCell.swift in Sources */,
 				ABA510252C0FF9B10077697F /* User.swift in Sources */,
 				8A1ED4182C0D5A5400A9C223 /* ProfileVC.swift in Sources */,
 				AB950F152C1353E200C3DD3D /* GlobalFunctions.swift in Sources */,
