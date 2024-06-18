@@ -23,12 +23,12 @@ import org.team.restoasis.model.Visit;
  *
  * @author aj898
  */
-@Path("Visit")
+@Path("visit")
 public class RestVisit {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("Save")
+    @Path("save")
     public Response Save(@FormParam("user_id") int user_id,
             @FormParam("property_id") int property_id,
             @FormParam("visit_date") String visit_date) {

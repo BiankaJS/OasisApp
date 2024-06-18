@@ -49,8 +49,8 @@ public class RestProperty {
         Gson gson = new Gson();
         try {
             ControllerProperty dp = new ControllerProperty();
-            List<DetailProperty> list = dp.getDetailProperty(propertyId);
-            out = gson.toJson(list);
+            DetailProperty property = dp.getDetailProperty(propertyId);
+            out = gson.toJson(property);
         } catch (Exception e) {
             out = """
                   {"Error":"Error en la peticion"}

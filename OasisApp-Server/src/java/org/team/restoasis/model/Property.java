@@ -9,26 +9,29 @@ package org.team.restoasis.model;
  * @author aj898
  */
 public class Property {
-    private int property_id;
+    private int propertyId;
+    private String name;
     private String location;
     private float price;
-    
-    public Property (){
-        
+
+    public Property() {
     }
 
-    public Property(int property_id, String location, float price) {
-        this.property_id = property_id;
-        this.location = location;
-        this.price = price;
+
+    public int getPropertyId() {
+        return propertyId;
     }
 
-    public int getProperty_id() {
-        return property_id;
+    public void setPropertyId(int propertyId) {
+        this.propertyId = propertyId;
     }
 
-    public void setProperty_id(int property_id) {
-        this.property_id = property_id;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLocation() {
@@ -46,7 +49,6 @@ public class Property {
     public void setPrice(float price) {
         this.price = price;
     }
-    
     
     
 }

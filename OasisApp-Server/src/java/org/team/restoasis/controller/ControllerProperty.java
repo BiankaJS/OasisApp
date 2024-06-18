@@ -43,14 +43,15 @@ public class ControllerProperty {
 
     private Property fillProperty(ResultSet rs) throws SQLException {
         Property property = new Property();
-        property.setProperty_id(rs.getInt("Property_id")); 
+        property.setPropertyId(rs.getInt("Property_id"));
+        property.setName(rs.getString("Name"));
         property.setLocation(rs.getString("Location"));
         property.setPrice(rs.getFloat("Price"));
         return property;
     }
     
-    public List<DetailProperty> getDetailProperty(int propertyId) {
-        List<DetailProperty> listDetailProperties = null;
+    public DetailProperty getDetailProperty(int propertyId) {
+        DetailProperty property = null;
         String query = "SELECT * FROM Details WHERE property_id = ?";
         try {
             ConnectionMysql connMysql = new ConnectionMysql();
@@ -58,18 +59,18 @@ public class ControllerProperty {
             PreparedStatement pstm = conn.prepareStatement(query);
             pstm.setInt(1, propertyId);
             ResultSet rs = pstm.executeQuery();
-            listDetailProperties = new ArrayList<>();
+            property = new DetailProperty();
             while (rs.next()) {
-                listDetailProperties.add(fillDetailProperty(rs));
+                property = fillDetailProperty(rs);
             }
             rs.close();
             pstm.close();
             connMysql.close();
-            return listDetailProperties;
+            return property;
         } catch (Exception e) {
-            listDetailProperties = new ArrayList<>();
+            property = new DetailProperty();
             e.printStackTrace();
-            return listDetailProperties;
+            return property;
         }
     }
 
