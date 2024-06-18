@@ -1,7 +1,8 @@
 import Foundation
-struct User {
-    let userId: Int;
-    let user: String;
+struct User: Codable {
+    var userId: Int;
+    var name: String;
+    var username: String;
     var email: String;
     var password: String;
     var address: String;

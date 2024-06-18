@@ -21,10 +21,13 @@
 		AB4F12D72C054C2A0090F0FE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AB4F12D62C054C2A0090F0FE /* Base */; };
 		AB4F12D92C054C2B0090F0FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4F12D82C054C2B0090F0FE /* Assets.xcassets */; };
 		AB4F12DC2C054C2B0090F0FE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AB4F12DB2C054C2B0090F0FE /* Base */; };
+		AB57D9392C209E30001C0CAA /* VisitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB57D9382C209E30001C0CAA /* VisitVC.swift */; };
+		AB57D93B2C20B2D3001C0CAA /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB57D93A2C20B2D3001C0CAA /* GlobalVariable.swift */; };
 		AB950F152C1353E200C3DD3D /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB950F142C1353E200C3DD3D /* GlobalFunctions.swift */; };
 		ABA510232C0FF7BF0077697F /* ConfigApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA510222C0FF7BF0077697F /* ConfigApi.swift */; };
 		ABA510252C0FF9B10077697F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA510242C0FF9B10077697F /* User.swift */; };
-		ABF2D6592C18B4AF0010BF1B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF2D6582C18B4AF0010BF1B /* TabBarViewController.swift */; };
+		ABC78FFA2C21E13B005A8433 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC78FF92C21E13B005A8433 /* CustomTableViewCell.swift */; };
+		ABD6C5A42C212126001FC83C /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD6C5A32C212126001FC83C /* Property.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +47,13 @@
 		AB4F12D82C054C2B0090F0FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB4F12DB2C054C2B0090F0FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB4F12DD2C054C2B0090F0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB57D9382C209E30001C0CAA /* VisitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitVC.swift; sourceTree = "<group>"; };
+		AB57D93A2C20B2D3001C0CAA /* GlobalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariable.swift; sourceTree = "<group>"; };
 		AB950F142C1353E200C3DD3D /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		ABA510222C0FF7BF0077697F /* ConfigApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigApi.swift; sourceTree = "<group>"; };
 		ABA510242C0FF9B10077697F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		ABF2D6582C18B4AF0010BF1B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		ABC78FF92C21E13B005A8433 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		ABD6C5A32C212126001FC83C /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +104,9 @@
 				8A1ED4172C0D5A5400A9C223 /* ProfileVC.swift */,
 				8A1ED4192C0D5A7100A9C223 /* EditProfileVC.swift */,
 				AB950F142C1353E200C3DD3D /* GlobalFunctions.swift */,
-				ABF2D6582C18B4AF0010BF1B /* TabBarViewController.swift */,
+				AB57D9382C209E30001C0CAA /* VisitVC.swift */,
+				AB57D93A2C20B2D3001C0CAA /* GlobalVariable.swift */,
+				ABC78FF92C21E13B005A8433 /* CustomTableViewCell.swift */,
 			);
 			path = OasisApp;
 			sourceTree = "<group>";
@@ -115,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA510242C0FF9B10077697F /* User.swift */,
+				ABD6C5A32C212126001FC83C /* Property.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,18 +199,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABF2D6592C18B4AF0010BF1B /* TabBarViewController.swift in Sources */,
+				ABC78FFA2C21E13B005A8433 /* CustomTableViewCell.swift in Sources */,
 				ABA510252C0FF9B10077697F /* User.swift in Sources */,
 				8A1ED4182C0D5A5400A9C223 /* ProfileVC.swift in Sources */,
 				AB950F152C1353E200C3DD3D /* GlobalFunctions.swift in Sources */,
+				ABD6C5A42C212126001FC83C /* Property.swift in Sources */,
 				AB4F12D42C054C2A0090F0FE /* ViewController.swift in Sources */,
 				ABA510232C0FF7BF0077697F /* ConfigApi.swift in Sources */,
 				8AB3B1FB2C07F86A002036D4 /* HomeVC.swift in Sources */,
+				AB57D93B2C20B2D3001C0CAA /* GlobalVariable.swift in Sources */,
 				AB4F12D02C054C2A0090F0FE /* AppDelegate.swift in Sources */,
 				8AB3B1F92C07F685002036D4 /* CreateAccountVC.swift in Sources */,
 				8A03A40F2C0CB33400BE06D8 /* CatalogVC.swift in Sources */,
 				8A1ED4162C0D4A0600A9C223 /* FavoritesVC.swift in Sources */,
 				AB4F12D22C054C2A0090F0FE /* SceneDelegate.swift in Sources */,
+				AB57D9392C209E30001C0CAA /* VisitVC.swift in Sources */,
 				8A1ED4122C0CC0F600A9C223 /* DetailVC.swift in Sources */,
 				8A1ED4142C0D3D2C00A9C223 /* ContactVC.swift in Sources */,
 				8A1ED41A2C0D5A7100A9C223 /* EditProfileVC.swift in Sources */,
@@ -363,14 +375,13 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.oasis.team.OasisApp;
+				PRODUCT_BUNDLE_IDENTIFIER = org.oasis.team.oasis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -392,14 +403,13 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.oasis.team.OasisApp;
+				PRODUCT_BUNDLE_IDENTIFIER = org.oasis.team.oasis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
