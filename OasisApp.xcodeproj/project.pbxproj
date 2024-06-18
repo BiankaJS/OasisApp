@@ -26,8 +26,10 @@
 		AB950F152C1353E200C3DD3D /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB950F142C1353E200C3DD3D /* GlobalFunctions.swift */; };
 		ABA510232C0FF7BF0077697F /* ConfigApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA510222C0FF7BF0077697F /* ConfigApi.swift */; };
 		ABA510252C0FF9B10077697F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA510242C0FF9B10077697F /* User.swift */; };
-		ABC78FFA2C21E13B005A8433 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC78FF92C21E13B005A8433 /* CustomTableViewCell.swift */; };
+		ABB316552C2222B70047C060 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB316542C2222B70047C060 /* CardCell.swift */; };
 		ABD6C5A42C212126001FC83C /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD6C5A32C212126001FC83C /* Property.swift */; };
+		ABD824B72C2234E900208D90 /* PropertyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD824B62C2234E900208D90 /* PropertyDetail.swift */; };
+		ABD824B92C224FF600208D90 /* ListVisitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD824B82C224FF600208D90 /* ListVisitVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +54,10 @@
 		AB950F142C1353E200C3DD3D /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		ABA510222C0FF7BF0077697F /* ConfigApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigApi.swift; sourceTree = "<group>"; };
 		ABA510242C0FF9B10077697F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		ABC78FF92C21E13B005A8433 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		ABB316542C2222B70047C060 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		ABD6C5A32C212126001FC83C /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		ABD824B62C2234E900208D90 /* PropertyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetail.swift; sourceTree = "<group>"; };
+		ABD824B82C224FF600208D90 /* ListVisitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVisitVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +110,8 @@
 				AB950F142C1353E200C3DD3D /* GlobalFunctions.swift */,
 				AB57D9382C209E30001C0CAA /* VisitVC.swift */,
 				AB57D93A2C20B2D3001C0CAA /* GlobalVariable.swift */,
-				ABC78FF92C21E13B005A8433 /* CustomTableViewCell.swift */,
+				ABB316542C2222B70047C060 /* CardCell.swift */,
+				ABD824B82C224FF600208D90 /* ListVisitVC.swift */,
 			);
 			path = OasisApp;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			children = (
 				ABA510242C0FF9B10077697F /* User.swift */,
 				ABD6C5A32C212126001FC83C /* Property.swift */,
+				ABD824B62C2234E900208D90 /* PropertyDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,16 +205,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC78FFA2C21E13B005A8433 /* CustomTableViewCell.swift in Sources */,
 				ABA510252C0FF9B10077697F /* User.swift in Sources */,
 				8A1ED4182C0D5A5400A9C223 /* ProfileVC.swift in Sources */,
 				AB950F152C1353E200C3DD3D /* GlobalFunctions.swift in Sources */,
 				ABD6C5A42C212126001FC83C /* Property.swift in Sources */,
 				AB4F12D42C054C2A0090F0FE /* ViewController.swift in Sources */,
 				ABA510232C0FF7BF0077697F /* ConfigApi.swift in Sources */,
+				ABD824B72C2234E900208D90 /* PropertyDetail.swift in Sources */,
 				8AB3B1FB2C07F86A002036D4 /* HomeVC.swift in Sources */,
+				ABD824B92C224FF600208D90 /* ListVisitVC.swift in Sources */,
 				AB57D93B2C20B2D3001C0CAA /* GlobalVariable.swift in Sources */,
 				AB4F12D02C054C2A0090F0FE /* AppDelegate.swift in Sources */,
+				ABB316552C2222B70047C060 /* CardCell.swift in Sources */,
 				8AB3B1F92C07F685002036D4 /* CreateAccountVC.swift in Sources */,
 				8A03A40F2C0CB33400BE06D8 /* CatalogVC.swift in Sources */,
 				8A1ED4162C0D4A0600A9C223 /* FavoritesVC.swift in Sources */,

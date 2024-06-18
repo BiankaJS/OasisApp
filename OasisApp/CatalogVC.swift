@@ -9,30 +9,61 @@ class CatalogVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         tableProperty.dataSource = self
         tableProperty.delegate = self
-        self.properties = [
-            Property(id: 1, name: "Producto 1", location: "Ubicación 1", price: 99.99),
-            Property(id: 2, name: "Producto 2", location: "Ubicación 2", price: 49.99),
-            Property(id: 3, name: "Producto 3", location: "Ubicación 3", price: 29.99),
-            Property(id: 4, name: "Producto 4", location: "Ubicación 4", price: 89.99),
-            Property(id: 5, name: "Producto 5", location: "Ubicación 5", price: 59.99),
-            Property(id: 1, name: "Producto 1", location: "Ubicación 1", price: 99.99),
-            Property(id: 2, name: "Producto 2", location: "Ubicación 2", price: 49.99),
-            Property(id: 3, name: "Producto 3", location: "Ubicación 3", price: 29.99),
-            Property(id: 4, name: "Producto 4", location: "Ubicación 4", price: 89.99),
-            Property(id: 5, name: "Producto 5", location: "Ubicación 5", price: 59.99)
-        ]
         
-        tableProperty.register(CustomTableViewCell.self, forCellReuseIdentifier: "CustomCell")
+        tableProperty.register(CardCell.self, forCellReuseIdentifier: "CustomCell")
                 
+        loadProperties()
         tableProperty.reloadData()
     }
     
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return properties.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return properties.count
+        }
+        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableProperty.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as! CardCell
+        cell.configure(properties[indexPath.row])
+        cell.styleElement()
+        return cell
     }
     
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return UITableViewCell()
-}
+    private func loadProperties() {
+        let endpoint = "/property/getProperties"
+        let urlString = ApiConfig.baseURL + endpoint
+        
+        guard let url = URL(string: urlString) else {
+            print("Algo salió mal")            
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error en la operación: \(error)")
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                if let data = data {
+                    do {
+                        if let model = try? JSONDecoder().decode([Property].self, from: data) {
+                            
+                            DispatchQueue.main.async {
+                                self.properties += model
+                                self.tableProperty.reloadData()
+                            }
+                            return
+                        }
+                    }
+                }
+            } else {
+                print("Respuesta fallida o no HTTPURLResponse: \(response)")
+                return
+            }
+        }
+        task.resume()
+    }
     
 }

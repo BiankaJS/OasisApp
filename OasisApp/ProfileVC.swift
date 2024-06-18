@@ -39,55 +39,55 @@ class ProfileVC: UIViewController {
     
     private func loadData() {
         let endpoint = "/profile/getUserDetails?userId=\(GlobalVariable.userId)"
-    let urlString = ApiConfig.baseURL + endpoint
-    guard let url = URL(string: urlString) else {
-        print("Algo salió mal")
-        return
-    }
-    
-    var request = URLRequest(url: url)
-    request.httpMethod = "GET"
-    
-    let task = URLSession.shared.dataTask(with: request) {
-        data,
-        response,
-        error in
-        if let error = error {
-            print("Error en la operación: \(error)")
+        let urlString = ApiConfig.baseURL + endpoint
+        guard let url = URL(string: urlString) else {
+            print("Algo salió mal")
             return
         }
         
-        if let httpResponse = response as? HTTPURLResponse,
-           httpResponse.statusCode == 200 {
-            if !(200...299).contains(httpResponse.statusCode)
-            {
-                print("Servidor responde:", httpResponse.statusCode)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            data,
+            response,
+            error in
+            if let error = error {
+                print("Error en la operación: \(error)")
+                return
             }
-            if let data = data {
-                do {
-                    if let model = try? JSONDecoder().decode(User.self, from: data) {
-                        
-                        print(model)
-                        
-                        DispatchQueue.main.async {
-                            self.txtName.text = model.name
-                            self.txtUsername.text = "@"+model.username
-                            self.txtEmail.text = model.email
-                            self.txtPassword.text = model.password
-                            self.txtPhone.text = model.phone
-                            self.txtAddress.text = model.address
+            
+            if let httpResponse = response as? HTTPURLResponse,
+               httpResponse.statusCode == 200 {
+                if !(200...299).contains(httpResponse.statusCode)
+                {
+                    print("Servidor responde:", httpResponse.statusCode)
+                }
+                if let data = data {
+                    do {
+                        if let model = try? JSONDecoder().decode(User.self, from: data) {
+                            
+                            print(model)
+                            
+                            DispatchQueue.main.async {
+                                self.txtName.text = model.name
+                                self.txtUsername.text = "@"+model.username
+                                self.txtEmail.text = model.email
+                                self.txtPassword.text = model.password
+                                self.txtPhone.text = model.phone
+                                self.txtAddress.text = model.address
+                            }
+                            
+                            self.modelProfile = model
+                            
+                            return
                         }
-                        
-                        self.modelProfile = model
-                        
-                        return
                     }
                 }
+            } else {
+                print("Respuesta fallida o no HTTPURLResponse: \(String(describing: response))")
+                return
             }
-        } else {
-            print("Respuesta fallida o no HTTPURLResponse: \(String(describing: response))")
-            return
-        }
     }
         task.resume()
     }

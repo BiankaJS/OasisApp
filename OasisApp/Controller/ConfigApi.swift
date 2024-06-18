@@ -7,5 +7,5 @@
 
 import Foundation
 struct ApiConfig {
-    static let baseURL = ""
+    static let baseURL = "https://aaa2-187-189-247-100.ngrok-free.app/OasisApp-Server/api"
 }
