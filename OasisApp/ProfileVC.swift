@@ -14,9 +14,9 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnLoad()
         hideKeyboardWhenTappedAround()
         loadData()
-        btnLoad()
     }
     
     @IBAction func btnLogout(_ sender: UIButton) {
